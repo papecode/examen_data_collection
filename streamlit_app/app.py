@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 from scraping_funcs import scrape_voitures, scrape_motos, scrape_locations
@@ -72,7 +73,11 @@ if option == "Télécharger données brutes":
             "Motos & Scooters": "motos.csv",
             "Location de voitures": "locations.csv"
         }
-        file_path = f"../data/raw/{file_map[data_type]}"
+
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        DATA_DIR = os.path.join(BASE_DIR, "..", "data", "raw")
+
+        file_path = os.path.join(DATA_DIR, file_map[data_type])
         try:
             df = pd.read_csv(file_path)
             st.markdown(f"""
