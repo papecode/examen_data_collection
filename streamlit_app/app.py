@@ -182,7 +182,7 @@ elif option == "Scrape data":
 
 elif option == "Afficher formulaire":
     st.subheader("📝 Remplir le formulaire Kobotoolbox")
-    st.components.v1.iframe("https://ee.kobotoolbox.org/x/rlgLziTC", height=1100, width=800)
+    st.components.v1.iframe("https://ee.kobotoolbox.org/i/rlgLziTC", height=600, width=800)
 
 elif option == "Dashboard":
     st.subheader("📊 Dashboard - Analyse des données nettoyées")
