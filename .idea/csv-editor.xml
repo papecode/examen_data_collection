@@ -3,7 +3,14 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="C:\Users\DELL Vostro Gaming\Downloads\data_motos_sitemap.csv">
+        <entry key="C:\Users\DELL Vostro Gaming\Downloads\locations_data_sitemap.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\raw\motos.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -11,6 +18,34 @@
           </value>
         </entry>
         <entry key="\data\raw\voitures.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\dumpDataPreview">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\notebook\locations_clean.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\notebook\motos_clean.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\notebook\voitures_clean.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
