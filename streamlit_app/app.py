@@ -117,12 +117,13 @@ elif option == "Scrape data":
 
 elif option == "Afficher formulaire":
     st.subheader("📝 Remplir le formulaire Kobotoolbox")
-    st.components.v1.iframe("https://ee.kobotoolbox.org/i/rlgLziTC", height=600, width=800)
+
+    st.markdown("""
+            <iframe src="https://ee.kobotoolbox.org/i/rlgLziTC" width="100%" height="700" style="border:none;"></iframe>
+        """, unsafe_allow_html=True)
 
 elif option == "Dashboard":
     st.subheader("📊 Dashboard - Analyse des données nettoyées")
-
-
 
     tab1, tab2, tab3 = st.tabs(["🚗 Voitures", "🏍️ Motos", "🚘 Voitures d'occasion"])
 
