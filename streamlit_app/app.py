@@ -124,10 +124,14 @@ elif option == "Dashboard":
 
     tab1, tab2, tab3 = st.tabs(["🚗 Voitures", "🏍️ Motos", "🚘 Voitures d'occasion"])
 
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    CLEANED_DIR = os.path.join("..", "data", "cleaned")
+
+    # Onglet Voitures
     with tab1:
         st.markdown("### Statistiques sur les voitures")
         try:
-            df_voitures = pd.read_csv("../data/cleaned/voitures_clean.csv")
+            df_voitures = pd.read_csv(os.path.join(CLEANED_DIR, "voitures_clean.csv"))
             df_voitures["prix"] = pd.to_numeric(df_voitures["prix"], errors="coerce")
             df_voitures["kilometrage"] = pd.to_numeric(df_voitures["kilometrage"], errors="coerce")
 
@@ -136,20 +140,27 @@ elif option == "Dashboard":
             st.bar_chart(prix_moyen)
 
             st.markdown("#### ⛽ Répartition des types de carburant")
-            st.write(df_voitures["carburant"].value_counts())
+            carburants = df_voitures["carburant"].value_counts()
+            st.dataframe(carburants.rename("Nombre"))
             st.plotly_chart(px.pie(df_voitures, names="carburant", title="Répartition par carburant"))
 
             st.markdown("#### 📉 Prix vs Kilométrage")
-            st.plotly_chart(px.scatter(df_voitures, x="kilometrage", y="prix", color="marque",
-                                       title="Relation Kilométrage / Prix"))
+            st.plotly_chart(px.scatter(
+                df_voitures,
+                x="kilometrage",
+                y="prix",
+                color="marque",
+                title="Relation Kilométrage / Prix"
+            ))
 
         except FileNotFoundError:
             st.error("Fichier voitures_clean.csv introuvable.")
 
+    # Onglet Motos
     with tab2:
         st.markdown("### Statistiques sur les motos")
         try:
-            df_motos = pd.read_csv("../data/cleaned/motos_clean.csv")
+            df_motos = pd.read_csv(os.path.join(CLEANED_DIR, "motos_clean.csv"))
             df_motos["prix"] = pd.to_numeric(df_motos["prix"], errors="coerce")
             df_motos["kilometrage"] = pd.to_numeric(df_motos["kilometrage"], errors="coerce")
 
@@ -158,16 +169,22 @@ elif option == "Dashboard":
             st.bar_chart(prix_moyen_moto)
 
             st.markdown("#### 📉 Prix vs Kilométrage")
-            st.plotly_chart(px.scatter(df_motos, x="kilometrage", y="prix", color="marque",
-                                       title="Relation Kilométrage / Prix"))
+            st.plotly_chart(px.scatter(
+                df_motos,
+                x="kilometrage",
+                y="prix",
+                color="marque",
+                title="Relation Kilométrage / Prix"
+            ))
 
         except FileNotFoundError:
             st.error("Fichier motos_clean.csv introuvable.")
 
+    # Onglet Voitures d'occasion
     with tab3:
         st.markdown("### Statistiques sur les voitures d’occasion")
         try:
-            df_location = pd.read_csv("../data/cleaned/locations_clean.csv")
+            df_location = pd.read_csv(os.path.join(CLEANED_DIR, "locations_clean.csv"))
             df_location["prix"] = pd.to_numeric(df_location["prix"], errors="coerce")
 
             st.markdown("#### 💰 Prix moyen par marque")
@@ -179,4 +196,4 @@ elif option == "Dashboard":
             st.bar_chart(repartition_adresse)
 
         except FileNotFoundError:
-            st.error("Fichier location_clean.csv introuvable.")
+            st.error("Fichier locations_clean.csv introuvable.")
