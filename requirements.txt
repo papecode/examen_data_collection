@@ -1,8 +1,10 @@
-streamlit
-pandas
+streamlit~=1.46.1
+pandas~=2.3.0
 numpy
-beautifulsoup4
-selenium
+beautifulsoup4~=4.13.4
+selenium~=4.33.0
 matplotlib
 seaborn
-requests
+requests~=2.32.4
+
+plotly~=6.1.2
