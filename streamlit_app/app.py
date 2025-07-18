@@ -6,101 +6,36 @@ import plotly.express as px
 
 st.set_page_config(page_title="Auto Dakar Scraper", layout="wide")
 
-
 st.markdown("""
     <style>
-        /* Fond principal de l'application, marron chaleureux */
         .stApp {
-            background-color: #7B5E3C;  /* Marron moyen chaud */
-            color: #F5F1E9;             /* Beige clair très lisible */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            background-color: #ffffff; /* Fond blanc sobre */
+            color: #2c3e50; /* Texte foncé */
         }
-        /* Sidebar un peu plus foncée pour contraste, avec une bordure douce */
         .stSidebar {
-            background-color: #5A452A; 
-            color: #E3DAC9;
-            border-right: 2px solid #6E573C;
+            background-color: #f0f2f6;
         }
-        /* Style des titres dans la sidebar */
-        .stSidebar h2, .stSidebar h3, .stSidebar h1 {
-            color: #E3DAC9;
-            font-weight: 700;
-        }
-        /* Boutons principaux bleu doux avec arrondis */
         .stButton > button {
-            background-color: #2E86AB;
+            background-color: #1f77b4;
             color: white;
-            font-weight: 700;
-            border-radius: 8px;
-            padding: 0.6rem 1.4rem;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 8px rgba(46,134,171,0.3);
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 0.6rem 1.2rem;
         }
-        /* Hover bouton bleu */
-        .stButton > button:hover {
-            background-color: #1B5F7A;
-            box-shadow: 0 6px 12px rgba(27,95,122,0.5);
-        }
-        /* Boutons de téléchargement vert foncé harmonieux */
         .stDownloadButton > button {
-            background-color: #4CAF50; /* Vert moyen */
+            background-color: #2e8b57; /* Vert foncé */
             color: white;
-            font-weight: 700;
-            border-radius: 8px;
-            padding: 0.6rem 1.4rem;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 8px rgba(76,175,80,0.3);
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 0.6rem 1.2rem;
         }
-        /* Hover bouton vert */
-        .stDownloadButton > button:hover {
-            background-color: #357a38;
-            box-shadow: 0 6px 12px rgba(53,122,56,0.5);
-        }
-        /* Labels des radio buttons plus lisibles */
         .stRadio > label {
-            font-weight: 600;
-            color: #E3DAC9;
+            font-weight: 500;
         }
-        /* Titres h1, h2, h3 élégants et lisibles */
         h1, h2, h3 {
-            color: #F5F1E9;
-            font-weight: 700;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin-bottom: 0.4rem;
+            color: #2c3e50;
         }
-        /* Lien dans le corps principal */
-        a {
-            color: #A0C8F0;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        /* Style des messages de succès */
-        .stSuccess, .stSuccess p {
-            background-color: #DFF0D8;
-            color: #3C763D;
-            border-radius: 8px;
-            padding: 10px;
-            font-weight: 600;
-            box-shadow: 0 2px 4px rgba(60,118,61,0.3);
-        }
-        /* Style des messages d'erreur */
-        .stError, .stError p {
-            background-color: #F2DEDE;
-            color: #A94442;
-            border-radius: 8px;
-            padding: 10px;
-            font-weight: 600;
-            box-shadow: 0 2px 4px rgba(169,68,66,0.3);
-        }
-        /* Style des boites d'affichage des dataframes */
-        .stDataFrame > div {
-            border-radius: 10px !important;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border: 1px solid #6E573C !important;
-        }
+
     </style>
 """, unsafe_allow_html=True)
 
