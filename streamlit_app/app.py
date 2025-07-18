@@ -122,10 +122,12 @@ elif option == "Afficher formulaire":
 elif option == "Dashboard":
     st.subheader("📊 Dashboard - Analyse des données nettoyées")
 
+
+
     tab1, tab2, tab3 = st.tabs(["🚗 Voitures", "🏍️ Motos", "🚘 Voitures d'occasion"])
 
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    CLEANED_DIR = os.path.join("..", "data", "cleaned")
+    CLEANED_DIR = os.path.join(BASE_DIR, "data", "cleaned")
 
     # Onglet Voitures
     with tab1:
